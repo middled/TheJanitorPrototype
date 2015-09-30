@@ -2,5 +2,72 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
-    <events />
+    <events>
+        <event-block sid="6670920620341019">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="6157131700846057" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="6320608784366374">
+            <conditions>
+                <condition behavior="Platform" id="1" name="Compare speed" sid="2838067544043762" type="player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set flipped" sid="1860112974643247" type="player">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6749540715646944">
+            <conditions>
+                <condition behavior="Platform" id="1" name="Compare speed" sid="2618310453096481" type="player">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set flipped" sid="9109609884438082" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7868486690699418">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="8505178938670868" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="5563644539218796" type="debug_text">
+                    <param id="0" name="Text">player.Platform.MovingAngle</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9898756447624017">
+            <conditions>
+                <condition id="5" name="Key code is down" sid="7298647804928875" type="Keyboard">
+                    <param id="0" name="Keycode">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="3903605886140893" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5388124394124846">
+            <conditions>
+                <condition id="5" name="Key code is down" sid="6667071728386231" type="Keyboard">
+                    <param id="0" name="Keycode">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="791489076428996" type="player">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>
