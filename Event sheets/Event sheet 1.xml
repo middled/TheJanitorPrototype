@@ -3,71 +3,123 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
-        <event-block sid="6670920620341019">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="6157131700846057" type="System" />
-            </conditions>
-            <actions />
-        </event-block>
-        <event-block sid="6320608784366374">
-            <conditions>
-                <condition behavior="Platform" id="1" name="Compare speed" sid="2838067544043762" type="player">
-                    <param id="0" name="Comparison">4</param>
-                    <param id="1" name="Speed">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="8" name="Set flipped" sid="1860112974643247" type="player">
-                    <param id="0" name="State">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="6749540715646944">
-            <conditions>
-                <condition behavior="Platform" id="1" name="Compare speed" sid="2618310453096481" type="player">
-                    <param id="0" name="Comparison">2</param>
-                    <param id="1" name="Speed">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="8" name="Set flipped" sid="9109609884438082" type="player">
-                    <param id="0" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="7868486690699418">
             <conditions>
                 <condition id="-1" name="Every tick" sid="8505178938670868" type="System" />
             </conditions>
             <actions>
                 <action id="0" name="Set text" sid="5563644539218796" type="debug_text">
-                    <param id="0" name="Text">player.Platform.MovingAngle</param>
+                    <param id="0" name="Text">player.Platform.MovingAngle &amp; &quot; &quot; &amp; player.Platform.Speed</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="5418696546858687">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="3780347878963678" type="player_scroll_to">
+                            <param id="0" name="Instance variable">changed</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="7137450413317522">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="9066447301005354" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="8058639955968143" type="player_scroll_to">
+                            <param id="0" name="Instance variable">changed_newX</param>
+                            <param id="1" name="Value">player.X + 370 * player.Mirrored</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1154205059673024" type="player_scroll_to">
+                            <param id="0" name="Instance variable">changed_newY</param>
+                            <param id="1" name="Value">player.Y -370</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7974427266570454">
+                    <conditions />
+                    <actions>
+                        <action id="-3" name="Set position" sid="3193621546734468" type="player_scroll_to">
+                            <param id="0" name="X">player_scroll_to.changed_newX</param>
+                            <param id="1" name="Y">player_scroll_to.changed_newY</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
-        <event-block sid="9898756447624017">
+        <event-block sid="2091173636101543">
             <conditions>
-                <condition id="5" name="Key code is down" sid="7298647804928875" type="Keyboard">
-                    <param id="0" name="Keycode">65</param>
+                <condition id="2" name="Key is down" sid="1207531520158235" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
                 </condition>
             </conditions>
             <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="1848161486250751" type="player">
+                    <param id="0" name="Control">0</param>
+                </action>
                 <action id="7" name="Set mirrored" sid="3903605886140893" type="player">
                     <param id="0" name="State">0</param>
                 </action>
+                <action id="-10" name="Set value" sid="3499580593564091" type="player">
+                    <param id="0" name="Instance variable">Mirrored</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
             </actions>
+            <sub-events>
+                <event-block sid="433906922483586">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="1696747326194307" type="player_scroll_to">
+                            <param id="0" name="Instance variable">changed</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
         </event-block>
-        <event-block sid="5388124394124846">
+        <event-block sid="9211082049986196">
             <conditions>
-                <condition id="5" name="Key code is down" sid="6667071728386231" type="Keyboard">
-                    <param id="0" name="Keycode">68</param>
+                <condition id="2" name="Key is down" sid="9954160634874326" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
                 </condition>
             </conditions>
             <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="9626968453207458" type="player">
+                    <param id="0" name="Control">1</param>
+                </action>
                 <action id="7" name="Set mirrored" sid="791489076428996" type="player">
                     <param id="0" name="State">1</param>
                 </action>
+                <action id="-10" name="Set value" sid="9134987242168647" type="player">
+                    <param id="0" name="Instance variable">Mirrored</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
+        </event-block>
+        <event-block sid="6683124297012219">
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" sid="6752258569687693" type="player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="3386737877218307" type="player">
+                    <param id="0" name="Animation">&quot;Running&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="946211047827375">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="997728552643288" type="player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="6248766518769492" type="player">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5841149225153902">
+            <conditions />
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>
