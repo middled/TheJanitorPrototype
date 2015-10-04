@@ -203,7 +203,7 @@
                         <changed_newX>0</changed_newX>
                         <changed_newY>0</changed_newY>
                         <direction>1</direction>
-                        <enabled>false</enabled>
+                        <enabled>true</enabled>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="ScrollTo">
