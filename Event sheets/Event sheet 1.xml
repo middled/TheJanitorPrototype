@@ -11,13 +11,13 @@
                 <action id="0" name="Set text" sid="5563644539218796" type="debug_text">
                     <param id="0" name="Text">player.Platform.MovingAngle &amp; &quot; &quot; &amp; player.Platform.Speed &amp; &quot; &quot; &amp; player_scroll_to.enabled</param>
                 </action>
-                <action id="-3" name="Set position" sid="3193621546734468" type="player_scroll_to">
-                    <param id="0" name="X">player_scroll_to.changed_newX</param>
-                    <param id="1" name="Y">player_scroll_to.changed_newY</param>
-                </action>
                 <action id="-3" name="Set position" sid="2600167637413001" type="debug_text">
                     <param id="0" name="X">ViewportLeft(&quot;Layer 1&quot;) + 10</param>
                     <param id="1" name="Y">debug_text.Y</param>
+                </action>
+                <action id="-3" name="Set position" sid="3193621546734468" type="player_scroll_to">
+                    <param id="0" name="X">player_scroll_to.changed_newX</param>
+                    <param id="1" name="Y">player_scroll_to.changed_newY</param>
                 </action>
             </actions>
         </event-block>
@@ -63,7 +63,7 @@
                     <conditions>
                         <condition id="-1" name="Compare X" sid="8127055820193689" type="player">
                             <param id="0" name="Comparison">3</param>
-                            <param id="1" name="X co-ordinate">ViewportLeft(&quot;Layer 1&quot;)</param>
+                            <param id="1" name="X co-ordinate">ViewportLeft(&quot;Layer 1&quot;) + WindowWidth / 4</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -85,36 +85,38 @@
                             <param id="1" name="Value">player_scroll_to.changed_newX - 740 * dt </param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="433906922483586">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="4821468287302542" type="player_scroll_to">
-                            <param id="0" name="Instance variable">changed_newX</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">(player.X - 370)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="5073305485190416" type="player_scroll_to">
-                            <param id="0" name="Instance variable">changed_newX</param>
-                            <param id="1" name="Value">player.X - 370</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="7993580563038407">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="9290178172561094" type="player_scroll_to">
-                            <param id="0" name="Instance variable">changed_newX</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">(player.X + 370)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="6314411495038711" type="player_scroll_to">
-                            <param id="0" name="Instance variable">changed_newX</param>
-                            <param id="1" name="Value">player.X + 370</param>
-                        </action>
-                    </actions>
+                    <sub-events>
+                        <event-block sid="433906922483586">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4821468287302542" type="player_scroll_to">
+                                    <param id="0" name="Instance variable">changed_newX</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">(player.X - 370)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="5073305485190416" type="player_scroll_to">
+                                    <param id="0" name="Instance variable">changed_newX</param>
+                                    <param id="1" name="Value">player.X - 370</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1596656878583529">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5106692520547228" type="player_scroll_to">
+                                    <param id="0" name="Instance variable">changed_newX</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">WindowWidth /2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="6323093056804788" type="player_scroll_to">
+                                    <param id="0" name="Instance variable">changed_newX</param>
+                                    <param id="1" name="Value">WindowWidth / 2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
@@ -160,7 +162,7 @@
                     <conditions>
                         <condition id="-1" name="Compare X" sid="399419559403747" type="player">
                             <param id="0" name="Comparison">5</param>
-                            <param id="1" name="X co-ordinate">ViewportRight(&quot;Layer 1&quot;)</param>
+                            <param id="1" name="X co-ordinate">ViewportRight(&quot;Layer 1&quot;) - WindowWidth / 4</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -182,36 +184,38 @@
                             <param id="1" name="Value">player_scroll_to.changed_newX + 740 * dt </param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="546902862855831">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="9208650081377502" type="player_scroll_to">
-                            <param id="0" name="Instance variable">changed_newX</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">(player.X - 370)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="5884186716300134" type="player_scroll_to">
-                            <param id="0" name="Instance variable">changed_newX</param>
-                            <param id="1" name="Value">player.X - 370</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="2082739004018946">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="4323047758065755" type="player_scroll_to">
-                            <param id="0" name="Instance variable">changed_newX</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">(player.X + 370)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="146211438000768" type="player_scroll_to">
-                            <param id="0" name="Instance variable">changed_newX</param>
-                            <param id="1" name="Value">player.X + 370</param>
-                        </action>
-                    </actions>
+                    <sub-events>
+                        <event-block sid="2082739004018946">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4323047758065755" type="player_scroll_to">
+                                    <param id="0" name="Instance variable">changed_newX</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">(player.X + 370)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="146211438000768" type="player_scroll_to">
+                                    <param id="0" name="Instance variable">changed_newX</param>
+                                    <param id="1" name="Value">player.X + 370</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="152119506964875">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3595190818616608" type="player_scroll_to">
+                                    <param id="0" name="Instance variable">changed_newX</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">LayoutWidth - WindowWidth/2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="7436936031203046" type="player_scroll_to">
+                                    <param id="0" name="Instance variable">changed_newX</param>
+                                    <param id="1" name="Value">LayoutWidth - WindowWidth / 2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
@@ -223,6 +227,10 @@
                 <action id="4" name="Set animation" sid="6248766518769492" type="player">
                     <param id="0" name="Animation">&quot;Default&quot;</param>
                     <param id="1" name="From">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="2789572593603279" type="player_scroll_to">
+                    <param id="0" name="Instance variable">enabled</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>
@@ -315,9 +323,9 @@
                 <condition id="-2" name="On start of layout" sid="4679185963968207" type="System" />
             </conditions>
             <actions>
-                <action id="-3" name="Set position" sid="3241978732689664" type="player_scroll_to">
-                    <param id="0" name="X">player.X + 370</param>
-                    <param id="1" name="Y">player.Y - 370</param>
+                <action id="-10" name="Set value" sid="3241978732689664" type="player_scroll_to">
+                    <param id="0" name="Instance variable">changed_newX</param>
+                    <param id="1" name="Value">player.X+370</param>
                 </action>
             </actions>
         </event-block>
