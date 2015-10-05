@@ -352,11 +352,6 @@
             <texture original-source="D:\Projekt\JenitorPrototype\test-ozadje\png\Tiles\15.png" />
             <tiles />
         </object-type>
-        <object-type name="Tilemap2" sid="5352704620128319">
-            <plugin id="Tilemap" />
-            <texture />
-            <tiles />
-        </object-type>
         <object-type name="WaterWaves" sid="4614324657770751">
             <plugin id="Tilemap" />
             <texture original-source="D:\Projekt\JenitorPrototype\test-ozadje\png\Tiles\17.png" />
@@ -365,6 +360,46 @@
         <object-type name="WaterBlue" sid="1455874297813534">
             <plugin id="Tilemap" />
             <texture original-source="D:\Projekt\JenitorPrototype\test-ozadje\png\Tiles\18.png" />
+            <tiles />
+        </object-type>
+        <object-type name="TiledBackground2" sid="4445372213216854">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite" sid="3998567941884072">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6752727688849463" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="342796942528774">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="7291654548049092">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7060397437142763" speed="5">
+                    <frame duration="1" hotspotX="0.492063" hotspotY="1.00397" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Earth" sid="5245203655669212">
+            <plugin id="Tilemap" />
+            <texture original-source="D:\Projekt\test-ozadje\png\Tiles\5.png" />
+            <tiles />
+        </object-type>
+        <object-type name="EarthPolygonDown" sid="6859131993023312">
+            <plugin id="Tilemap" />
+            <texture original-source="D:\Projekt\test-ozadje\png\Tiles\16.png" />
+            <tiles />
+        </object-type>
+        <object-type name="TilemapPolygoonDeep" sid="1371609999806231">
+            <plugin id="Tilemap" />
+            <texture original-source="D:\Projekt\test-ozadje\png\Tiles\6.png" />
             <tiles />
         </object-type>
     </object-folder>
