@@ -13,12 +13,12 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Scirra" id="shadowlight" version="1">Shadow Light</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -333,10 +333,6 @@
         <object-type name="ShadowLight" sid="7280961356120798">
             <plugin id="shadowlight" />
         </object-type>
-        <object-type name="TiledBackground" sid="2836362528792952">
-            <plugin id="TiledBg" />
-            <texture original-source="D:\Projekt\JenitorPrototype\test-ozadje\png\BG\BG.png" />
-        </object-type>
         <object-type name="FlatTilemap" sid="4109183369699811">
             <plugin id="Tilemap" />
             <texture original-source="D:\Projekt\JenitorPrototype\test-ozadje\png\Tiles\2.png" />
@@ -361,10 +357,6 @@
             <plugin id="Tilemap" />
             <texture original-source="D:\Projekt\JenitorPrototype\test-ozadje\png\Tiles\18.png" />
             <tiles />
-        </object-type>
-        <object-type name="TiledBackground2" sid="4445372213216854">
-            <plugin id="TiledBg" />
-            <texture />
         </object-type>
         <object-type name="Sprite" sid="3998567941884072">
             <plugin id="Sprite" />
@@ -397,10 +389,87 @@
             <texture original-source="D:\Projekt\test-ozadje\png\Tiles\16.png" />
             <tiles />
         </object-type>
-        <object-type name="TilemapPolygoonDeep" sid="1371609999806231">
+        <object-type name="VerticalObjectRight" sid="1371609999806231">
             <plugin id="Tilemap" />
             <texture original-source="D:\Projekt\test-ozadje\png\Tiles\6.png" />
             <tiles />
+        </object-type>
+        <object-type name="Sprite3" sid="8728686167907096">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="66224166131454" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.521999" y="0.652" />
+                            <point x="0.38" y="0.5" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="5342745635390118">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="9984551140136091">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="581411522226407" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Elivator" sid="6222244395387799">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="9011804474700795">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="5493608961677304">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6210397060139099" speed="5">
+                    <frame duration="1" hotspotX="-0.0078125" hotspotY="1" original-source="D:\Projekt\test-ozadje\png\Tiles\14.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="VerticalObjectLeft" sid="4045698190074882">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="5677378055187451">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="3071803798943522">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2703849051080662" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="D:\Projekt\test-ozadje\png\Tiles\14.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite6" sid="9372226077108478">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="5859960960217891">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="4017222777573914">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1691831037468945" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="D:\Projekt\test-ozadje\png\Tiles\14.png" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
