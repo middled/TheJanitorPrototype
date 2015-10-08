@@ -586,20 +586,20 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Mirrored>1</Mirrored>
+                        <directionX>1</directionX>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
                                 <max-speed>500</max-speed>
-                                <acceleration>400</acceleration>
-                                <deceleration>1500</deceleration>
+                                <acceleration>300</acceleration>
+                                <deceleration>750</deceleration>
                                 <jump-strength>500</jump-strength>
-                                <gravity>1500</gravity>
+                                <gravity>1280</gravity>
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>100</jump-sustain>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -686,41 +686,6 @@
                         <depth>0</depth>
                         <hotspotX>0.515384614</hotspotX>
                         <hotspotY>0.970588207</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="player_scroll_to" uid="5">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <changed_newX>0</changed_newX>
-                        <changed_newY>0</changed_newY>
-                        <direction>1</direction>
-                        <enabled>true</enabled>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="ScrollTo">
-                            <properties>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>128</x>
-                        <y>96</y>
-                        <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
