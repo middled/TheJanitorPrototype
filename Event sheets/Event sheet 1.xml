@@ -8,16 +8,7 @@
         <variable constant="0" name="holdTimer" sid="2461311793703965" static="0" type="number">0</variable>
         <variable constant="0" name="bumping" sid="6134143817321916" static="0" type="number">0</variable>
         <variable constant="0" name="following" sid="7623326278787537" static="0" type="number">0</variable>
-        <event-group description="" sid="9002456867769247" title="Initialization">
-            <sub-events>
-                <event-block sid="9360350039673384">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="4679185963968207" type="System" />
-                    </conditions>
-                    <actions />
-                </event-block>
-            </sub-events>
-        </event-group>
+        <event-group description="" sid="9002456867769247" title="Initialization" />
         <event-group description="" sid="631818763560375" title="Game Controller ">
             <sub-events>
                 <event-block sid="7868486690699418">
@@ -34,12 +25,19 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block disabled="1" sid="5450152055627478">
+                <event-block sid="5450152055627478">
                     <conditions>
                         <condition id="-4" name="Is outside layout" sid="1276219039971941" type="player" />
                     </conditions>
                     <actions>
+                        <action id="-9" name="Destroy" sid="9725213000264983" type="player" />
                         <action id="-26" name="Restart layout" sid="6738484116236032" type="System" />
+                        <action id="-3" name="Create object" sid="7730467389266514" type="System">
+                            <param id="0" name="Object to create">player</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">96</param>
+                            <param id="3" name="Y">256</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="5933210373904847">
@@ -52,7 +50,7 @@
                     </conditions>
                     <actions>
                         <action id="-5" name="Scroll to X" sid="7424049703622099" type="System">
-                            <param id="0" name="X">lerp(scrollx,player.X + WindowWidth /4, dt)</param>
+                            <param id="0" name="X">lerp(scrollx,player.X + WindowWidth /4, dt*2)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -66,7 +64,7 @@
                     </conditions>
                     <actions>
                         <action id="-5" name="Scroll to X" sid="6345269125749417" type="System">
-                            <param id="0" name="X">lerp(scrollx,player.X - WindowWidth /4, dt)</param>
+                            <param id="0" name="X">lerp(scrollx,player.X - WindowWidth /4, dt*2)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -85,7 +83,7 @@
                                 <condition id="-8" name="Compare two values" sid="5199590946862233" type="System">
                                     <param id="0" name="First value">player.X</param>
                                     <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">ViewportLeft(&quot;Layer 1&quot;) + 270</param>
+                                    <param id="2" name="Second value">ViewportLeft(&quot;Layer 1&quot;) + 100</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -138,15 +136,12 @@
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="9690684437241325" type="System">
                                     <param id="0" name="First value">abs(scrollx - bumpTo)</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Second value">10</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">100</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Set text" sid="2215731005882051" type="debug_text">
-                                    <param id="0" name="Text">bumping &amp; &quot; &quot; &amp; following</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="4888304625836407" type="System">
+                                <action disabled="1" id="-9" name="Set value" sid="4888304625836407" type="System">
                                     <param id="0" name="Variable">bumping</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
@@ -558,7 +553,7 @@
             </conditions>
             <actions>
                 <action behavior="Platform" id="3" name="Set deceleration" sid="5435571665420639" type="player">
-                    <param id="0" name="Deceleration">250</param>
+                    <param id="0" name="Deceleration">750</param>
                 </action>
             </actions>
         </event-block>
