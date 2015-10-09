@@ -3,11 +3,6 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
-        <variable constant="0" name="bumpTo" sid="5518815904161405" static="0" type="number">0</variable>
-        <variable constant="0" name="holdOpositeTimer" sid="8938608641016863" static="0" type="number">0</variable>
-        <variable constant="0" name="holdTimer" sid="2461311793703965" static="0" type="number">0</variable>
-        <variable constant="0" name="bumping" sid="6134143817321916" static="0" type="number">0</variable>
-        <variable constant="0" name="following" sid="7623326278787537" static="0" type="number">0</variable>
         <event-group description="" sid="9002456867769247" title="Initialization" />
         <event-group description="" sid="631818763560375" title="Game Controller ">
             <sub-events>
@@ -19,9 +14,6 @@
                         <action id="-3" name="Set position" sid="2600167637413001" type="debug_text">
                             <param id="0" name="X">ViewportLeft(&quot;Layer 1&quot;) + 10</param>
                             <param id="1" name="Y">debug_text.Y</param>
-                        </action>
-                        <action id="0" name="Set text" sid="8403820518822593" type="debug_text">
-                            <param id="0" name="Text">bumping &amp; &quot; &quot; &amp; following</param>
                         </action>
                     </actions>
                 </event-block>
@@ -40,114 +32,20 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="5933210373904847">
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="5060678084619578" title="Camera">
+            <sub-events>
+                <event-block sid="8932343579007269">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="2031308316316353" type="System">
-                            <param id="0" name="Variable">following</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
+                        <condition id="-1" name="Every tick" sid="6367943299400623" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-5" name="Scroll to X" sid="7424049703622099" type="System">
-                            <param id="0" name="X">lerp(scrollx,player.X + WindowWidth /4, dt*2)</param>
+                        <action id="-7" name="Scroll to position" sid="3848449332144387" type="System">
+                            <param id="0" name="X">player.X</param>
+                            <param id="1" name="Y">player.Y</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="8209380679694605">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="9395797317452921" type="System">
-                            <param id="0" name="Variable">following</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">-1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-5" name="Scroll to X" sid="6345269125749417" type="System">
-                            <param id="0" name="X">lerp(scrollx,player.X - WindowWidth /4, dt*2)</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="4527968265839636">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="6120394107221869" type="System">
-                            <param id="0" name="Variable">following</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="6072567870328713">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="5199590946862233" type="System">
-                                    <param id="0" name="First value">player.X</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">ViewportLeft(&quot;Layer 1&quot;) + 100</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="1621723898387783" type="System">
-                                    <param id="0" name="Variable">bumpTo</param>
-                                    <param id="1" name="Value">scrollx - 270</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="3376457413812436" type="System">
-                                    <param id="0" name="Variable">bumping</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="8151847286972709">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="292435084669244" type="System">
-                                    <param id="0" name="First value">player.X</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Second value">ViewportRight(&quot;Layer 1&quot;) -270</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="1574935276095047" type="System">
-                                    <param id="0" name="Variable">bumpTo</param>
-                                    <param id="1" name="Value">scrollx+ 270</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="1258865527399183" type="System">
-                                    <param id="0" name="Variable">bumping</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="8153223563679127">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="3957425531695104" type="System">
-                            <param id="0" name="Variable">bumping</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-5" name="Scroll to X" sid="3281781706697102" type="System">
-                            <param id="0" name="X">lerp(scrollx,bumpTo, dt)</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="7026614403293972">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="9690684437241325" type="System">
-                                    <param id="0" name="First value">abs(scrollx - bumpTo)</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">100</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action disabled="1" id="-9" name="Set value" sid="4888304625836407" type="System">
-                                    <param id="0" name="Variable">bumping</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -277,107 +175,6 @@
                             <param id="0" name="State">0</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="4484860736370137">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="8022252154579128" type="player">
-                                    <param id="0" name="Instance variable">directionX</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">-1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="5099990969868358" type="player">
-                                    <param id="0" name="Instance variable">directionX</param>
-                                    <param id="1" name="Value">-1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="7262543353079461" type="System">
-                                    <param id="0" name="Variable">holdTimer</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="7526016820464048">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="5541559284633997" type="System">
-                                    <param id="0" name="Variable">following</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="1797283174624747">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="5680745470845856" type="System">
-                                            <param id="0" name="Variable">holdOpositeTimer</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="3836615800872997" type="System">
-                                            <param id="0" name="Variable">following</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="9873812678537901" type="System">
-                                            <param id="0" name="Variable">holdOpositeTimer</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="586092887272746">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="6547312204677498" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-10" name="Add to" sid="9016880594628699" type="System">
-                                            <param id="0" name="Variable">holdOpositeTimer</param>
-                                            <param id="1" name="Value">dt</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="9512615577528772">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="9138543734963388" type="System" />
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="2255321963585991">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="3128673897636437" type="System">
-                                            <param id="0" name="Variable">holdTimer</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="44279511022913" type="System">
-                                            <param id="0" name="Variable">following</param>
-                                            <param id="1" name="Value">-1</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="2306783365541715" type="System">
-                                            <param id="0" name="Variable">holdOpositeTimer</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="2523107406777087">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="90815686044984" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-10" name="Add to" sid="7113547082196961" type="System">
-                                            <param id="0" name="Variable">holdTimer</param>
-                                            <param id="1" name="Value">dt</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="736422497680356">
                     <conditions>
@@ -393,107 +190,6 @@
                             <param id="0" name="State">1</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="5774917009554871">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="1925579335887348" type="player">
-                                    <param id="0" name="Instance variable">directionX</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="1197720716932573" type="player">
-                                    <param id="0" name="Instance variable">directionX</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="1139693710357723" type="System">
-                                    <param id="0" name="Variable">holdTimer</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="4392779269473022">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="2450253698115665" type="System">
-                                    <param id="0" name="Variable">following</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">-1</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="1698920036090429">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="3422811822520439" type="System">
-                                            <param id="0" name="Variable">holdOpositeTimer</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="9258433554965614" type="System">
-                                            <param id="0" name="Variable">following</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="9214580929391451" type="System">
-                                            <param id="0" name="Variable">holdOpositeTimer</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="2081362196435716">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="6027844125122484" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-10" name="Add to" sid="4207030012200324" type="System">
-                                            <param id="0" name="Variable">holdOpositeTimer</param>
-                                            <param id="1" name="Value">dt</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="1643396745122035">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="612374175308022" type="System" />
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="7576631360480031">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="2814095523107969" type="System">
-                                            <param id="0" name="Variable">holdTimer</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="3996090552279797" type="System">
-                                            <param id="0" name="Variable">following</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="9495102127673543" type="System">
-                                            <param id="0" name="Variable">holdOpositeTimer</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="3838281512943649">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="260097795970921" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-10" name="Add to" sid="5721042978650404" type="System">
-                                            <param id="0" name="Variable">holdTimer</param>
-                                            <param id="1" name="Value">dt</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="556230562398077">
                     <conditions>
@@ -556,6 +252,34 @@
                     <param id="0" name="Deceleration">750</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="5887463173109496">
+            <conditions>
+                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="9955330144276253" type="player" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4109826574031687">
+                    <conditions>
+                        <condition behavior="Platform" id="10" name="Is by wall" sid="8363492700999871" type="player">
+                            <param id="0" name="Side">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="6228756894784541" type="player">
+                            <param id="0" name="Vector Y">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8528662734148546">
+                    <conditions>
+                        <condition behavior="Platform" id="10" name="Is by wall" sid="7874334633361721" type="player">
+                            <param id="0" name="Side">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

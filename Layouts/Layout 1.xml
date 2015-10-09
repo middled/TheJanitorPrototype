@@ -586,7 +586,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <directionX>1</directionX>
+                        <wallHoldTime>1</wallHoldTime>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
