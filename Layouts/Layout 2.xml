@@ -240,19 +240,20 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <wallHoldTime>1</wallHoldTime>
+                        <wallHoldTimer>0</wallHoldTimer>
+                        <wallRun>0</wallRun>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
                                 <max-speed>500</max-speed>
-                                <acceleration>300</acceleration>
-                                <deceleration>750</deceleration>
+                                <acceleration>2500</acceleration>
+                                <deceleration>2500</deceleration>
                                 <jump-strength>500</jump-strength>
-                                <gravity>1280</gravity>
+                                <gravity>2000</gravity>
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
-                                <jump-sustain>100</jump-sustain>
+                                <jump-sustain>200</jump-sustain>
                                 <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
@@ -334,10 +335,69 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1152</x>
+                        <x>1088</x>
                         <y>1152</y>
                         <z>0</z>
-                        <width>96</width>
+                        <width>160</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="debug_text" uid="33">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>32</x>
+                        <y>896</y>
+                        <z>0</z>
+                        <width>160</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="wall_10m" uid="34">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1120</x>
+                        <y>1056</y>
+                        <z>0</z>
+                        <width>128</width>
                         <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>

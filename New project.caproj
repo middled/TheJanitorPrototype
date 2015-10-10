@@ -17,6 +17,7 @@
         <plugin author="Scirra" id="shadowlight" version="1">Shadow Light</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
@@ -67,7 +68,8 @@
         <object-type global="1" name="player" sid="7723903875284628">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="wallHoldTime" sid="7406337614172975" type="number" />
+                <instance-variable name="wallHoldTimer" sid="7406337614172975" type="number" />
+                <instance-variable name="wallRun" sid="3837095989305583" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="1173370167233146">
@@ -284,6 +286,11 @@
         </object-type>
         <object-type name="debug_text" sid="8117437744299111">
             <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Pin" sid="9893216987191625">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
         </object-type>
         <object-type name="Tilemap" sid="9329644083940777">
             <plugin id="Tilemap" />
