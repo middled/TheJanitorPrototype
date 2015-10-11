@@ -284,7 +284,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="debug_text" sid="8117437744299111">
+        <object-type global="1" name="debug_text" sid="8117437744299111">
             <plugin id="Text" />
             <behaviors>
                 <behavior-type name="Pin" sid="9893216987191625">
@@ -467,14 +467,37 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="wall_45angle" sid="5242638606991014">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="6696527124276482">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9282088955473319" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Sašo\Documents\TheJanitorPrototype\Assets\wall_45angle_64x64_.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
-        <layout>Layout 2.xml</layout>
+        <layout>Level 1.xml</layout>
+        <layout>UI.xml</layout>
+        <layout>MainMenu.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Gameplay sheet.xml</event-sheet>
+        <event-sheet>UI sheet.xml</event-sheet>
+        <event-sheet>MainMenu sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
