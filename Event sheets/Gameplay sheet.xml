@@ -182,7 +182,7 @@
                                 <condition id="-7" name="Compare instance variable" sid="5784684413303162" type="player">
                                     <param id="0" name="Instance variable">wallHoldTimer</param>
                                     <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">0.5</param>
+                                    <param id="2" name="Value">0.25</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -214,7 +214,7 @@
                                 <condition id="-7" name="Compare instance variable" sid="6946498269945592" type="player">
                                     <param id="0" name="Instance variable">wallHoldTimer</param>
                                     <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">0.5</param>
+                                    <param id="2" name="Value">0.25</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -356,15 +356,15 @@
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Second value">0</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="3292729732797594" type="player">
+                                        <condition id="-7" name="Compare instance variable" sid="4737748510957341" type="player">
                                             <param id="0" name="Instance variable">wallRun</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="6015257084697068" type="player">
-                                            <param id="0" name="Vector Y">player.Platform.VectorY * 2</param>
+                                        <action behavior="Platform" disabled="1" id="9" name="Set vector Y" sid="6015257084697068" type="player">
+                                            <param id="0" name="Vector Y">player.Platform.VectorY-player.Platform.Speed</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -389,7 +389,7 @@
                                         <condition id="-7" name="Compare instance variable" sid="7319079131959574" type="player">
                                             <param id="0" name="Instance variable">wallHoldTimer</param>
                                             <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0.5</param>
+                                            <param id="2" name="Value">0.25</param>
                                         </condition>
                                     </conditions>
                                     <actions>

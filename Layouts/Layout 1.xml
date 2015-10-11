@@ -593,8 +593,8 @@
                         <behavior-instance type="Platform">
                             <properties>
                                 <max-speed>500</max-speed>
-                                <acceleration>2500</acceleration>
-                                <deceleration>2500</deceleration>
+                                <acceleration>500</acceleration>
+                                <deceleration>500</deceleration>
                                 <jump-strength>500</jump-strength>
                                 <gravity>2000</gravity>
                                 <max-fall-speed>1000</max-fall-speed>
@@ -617,9 +617,6 @@
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
-                    <effect-instances>
-                        <effect-instance type="Multiply" />
-                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
