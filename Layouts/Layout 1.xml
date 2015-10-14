@@ -2,7 +2,7 @@
 <c2layout>
     <name>Layout 1</name>
     <sid>8873350371196689</sid>
-    <event-sheet>Event sheet 1</event-sheet>
+    <event-sheet>Gameplay sheet</event-sheet>
     <size>
         <width>5120</width>
         <height>1000</height>
@@ -586,16 +586,17 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <directionX>1</directionX>
+                        <wallHoldTimer>0</wallHoldTimer>
+                        <wallRun>0</wallRun>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
                                 <max-speed>500</max-speed>
-                                <acceleration>300</acceleration>
-                                <deceleration>750</deceleration>
+                                <acceleration>600</acceleration>
+                                <deceleration>500</deceleration>
                                 <jump-strength>500</jump-strength>
-                                <gravity>1280</gravity>
+                                <gravity>2000</gravity>
                                 <max-fall-speed>1000</max-fall-speed>
                                 <double-jump>Disabled</double-jump>
                                 <jump-sustain>100</jump-sustain>
@@ -616,9 +617,6 @@
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
-                    <effect-instances>
-                        <effect-instance type="Multiply" />
-                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -646,6 +644,9 @@
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
