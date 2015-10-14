@@ -562,5 +562,18 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="3745955164633431">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="7015199051483373">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="6822625208799992" type="player" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2662028867133702" type="player" />
+                <action id="-26" name="Restart layout" sid="7205728031781969" type="System" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
